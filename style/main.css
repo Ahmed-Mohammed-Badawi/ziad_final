@@ -1,0 +1,41 @@
+body{ 
+   background-image: url(pngtree-white-half-of-the-car-front-lights-background-material-picture-image_853989.jpg);
+background-color: aliceblue;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   overflow: hidden;
+   
+}
+.labelh{color: rgb(180, 16, 16)
+;
+caret-color:black;
+                                                                                                                                                            
+
+}
+.row .b{
+cursor:text;
+
+
+background-color: white;
+border-color: grey;
+
+}
+.c{
+   color: rgb(180, 16, 16);
+}
+.f{
+   background-color: grey;
+ 
+}
+.btn1 {
+   display: flex;
+}
+
+
+.borda{
+	border-radius: 8px;
+}
+.cfg{
+   color: antiquewhite;
+}

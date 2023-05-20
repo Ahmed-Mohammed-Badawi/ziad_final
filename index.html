@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="style_cardetails.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-part">
+            <div class="form-container">
+                <h1>Car Details</h1>
+                <form id="car_details-form">
+                    <div class="form-group">
+                        <label for="vin_number">VIN Number:</label>
+                        <input type="text" id="vin_number" name="vin_number" required
+                            placeholder="Type The VIN number...">
+                    </div>
+                    <div class="form-group">
+                        <label for="car_type">Car Type:</label>
+                        <select name="car_type" id="car_type" class="desgin" required>
+                            <option value="">Select an Option</option>
+                            <option value="cat">BMW</option>
+                            <option value="hamster">Mercedes</option>
+                            <option value="cat">Audi</option>
+                            <option value="hamster">Toyota</option>
+                            <option value="cat">Honda</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car_model">Car Model:</label>
+                        <select name="car_model" id="car_model" required>
+                            <option value="">Select an Option</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car_color">Car Color:</label>
+                        <select name="car_color" id="car_color" required>
+                            <option value="">Select an Option</option>
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="gray">Gray</option>
+                            <option value="silver">Silver</option>
+                            <option value="brown">Brown</option>
+                            <option value="orange">Orange</option>
+                            <option value="purple">Purple</option>
+                            <option value="pink">Pink</option>
+                            <option value="gold">Gold</option>
+                            <option value="beige">Beige</option>
+                            <option value="bronze">Bronze</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car_country">Manufacturing country:</label>
+                        <select name="car_country" id="car_country" required>
+                            <option value="">Select an Option</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Japan">Japan</option>
+                            <option value="USA">USA</option>
+                            <option value="China">China</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="France">France</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Canada">Canada</option>
+                            <option value="UK">UK</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car_engine">Engine capcity:</label>
+                        <select name="car_engine" id="car_engine" required>
+                            <option value="">Select an Option</option>
+                            <option value="1000-1600">1000-1600cc</option>
+                            <option value="1800-2000">1800-2000cc</option>
+                            <option value="2200-2500">2200-2500cc</option>
+                            <option value="3000-3500">3000-3500cc</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year_of_manufacturing">Year of manufacturing:</label>
+                        <select name="year_of_manufacturing" id="year_of_manufacturing" required>
+                            <option value="">Select an Option</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <!--        <img src="residence.webp" alt="residence">-->
+            <div id="__HOME">
+                <img src="./home.png" alt="Home Image">
+            </div>
+            <div id="__LOGOUT">
+                <img src="./logout.png" alt="Home Image">
+            </div>
+        </div>
+    </div>
+    <!-- Add more Firebase SDKs if required -->
+    <script type="module" src="./car_details.js"></script>
+
+</body>
+
+</html>

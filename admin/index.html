@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="left-content">
+        <h1>Order Action</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Enter Order ID" id="order-id">
+          <button id="search">Search</button>
+        </div>
+        <div class="status status_hidden" id="status">
+          <div class="step">
+            <div class="step-icon">1</div>
+            <div class="step-info">
+              <h2>Dispatch in Progress</h2>
+              <p id="status_0">Status: In progress</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">2</div>
+            <div class="step-info">
+              <h2>Uploaded</h2>
+              <p id="status_1">Status: Not yet</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">3</div>
+            <div class="step-info">
+              <h2>Shipment Arrived</h2>
+              <p id="status_2">Status: Not yet</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">4</div>
+            <div class="step-info">
+              <h2>Ready for Pickup</h2>
+              <p id="status_3">Status: Not yet</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="next_step status_hidden" id="next_button">Next</button>
+      </div>
+    </div>
+    <div class="right-section">
+      <!-- <img src="../car_details.webp" alt="Order Image"> -->
+      <div id="__HOME">
+        <img src="../home.png" alt="Home Image">
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>

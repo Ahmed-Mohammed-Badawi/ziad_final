@@ -1,0 +1,35 @@
+body{
+   background-image: url(pngtree-c4d-indoor-garage-display-car-scene-picture-image_995928.jpg);
+
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   overflow: hidden; background-color: white;
+   
+}
+.labelh{color: rgb(180, 16, 16)
+;
+caret-color:black;
+
+
+}
+.row .b{
+cursor:text;
+
+
+background-color: white;
+border-color: grey;
+
+}
+
+}
+.f{
+   background-color: grey;
+ 
+}
+.btn1 {
+   display: flex;
+}
+.recolor{
+   color: antiquewhite;
+}

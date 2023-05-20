@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Residence Data Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-part">
+            <div class="form-container">
+                <h1>Residence Data</h1>
+                <form id="residence-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Type your name...">
+                    </div>
+                    <div class="form-group">
+                        <label for="national-id">National ID:</label>
+                        <input type="text" id="national-id" name="nationalId" required
+                            placeholder="Type your National ID...">
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality">Nationality:</label>
+                        <input type="text" id="nationality" name="nationality" required
+                            placeholder="Type your Nationality...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Type your Email...">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Type your Phone...">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" required placeholder="Type your Country...">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select an option</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <!--        <img src="residence.webp" alt="residence">-->
+            <div id="__HOME">
+                <img src="../home.png" alt="Home Image">
+            </div>
+        </div>
+    </div>
+    <!-- Add more Firebase SDKs if required -->
+    <script type="module" src="./app.js"></script>
+
+</body>
+
+</html>
