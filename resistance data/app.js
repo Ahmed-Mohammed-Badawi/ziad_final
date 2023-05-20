@@ -1,5 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {
+    getAuth,
+    signOut,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import {
     getFirestore,
     collection,
@@ -27,6 +30,12 @@ auth.onAuthStateChanged((user) => {
 
         // Firestore-related code
         const form = document.getElementById("residence-form");
+
+        // GET THE LOGOUT BUTTON
+        const logout_button = document.getElementById("__LOGOUT");
+
+        // SHOW THE LOGOUT BUTTON
+        logout_button.style.display = "flex";
 
         // GET THE DATA
         const name = document.getElementById("name");
@@ -110,6 +119,19 @@ auth.onAuthStateChanged((user) => {
                 console.error("Error adding document: ", e);
             }
         }
+
+        // LOGOUT FUNCTION
+        logout_button.addEventListener("click", () => {
+            signOut(auth)
+                .then(() => {
+                    // redirect to login page
+                    window.location.href = "/login.html";
+                })
+                .catch((error) => {
+                    window.alert(error.message);
+                });
+        });
+
         form.addEventListener("submit", submitHandler);
     } else {
         // Redirect to login page or handle the case when the user is not signed in

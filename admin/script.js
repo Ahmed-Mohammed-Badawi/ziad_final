@@ -1,5 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {
+    getAuth,
+    signOut,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import {
     getFirestore,
     collection,
@@ -28,6 +31,12 @@ auth.onAuthStateChanged((user) => {
     if (user) {
         // User is signed in
         console.log("User is signed in:", user);
+
+        // GET THE LOGOUT BUTTON
+        const logout_button = document.getElementById("__LOGOUT");
+
+        // SHOW THE LOGOUT BUTTON
+        logout_button.style.display = "flex";
 
         // GET THE DATA
         const order = document.getElementById("order-id");
@@ -171,6 +180,18 @@ auth.onAuthStateChanged((user) => {
                 }
             }
         }
+
+        // LOGOUT FUNCTION
+        logout_button.addEventListener("click", () => {
+            signOut(auth)
+                .then(() => {
+                    // redirect to login page
+                    window.location.href = "/login.html";
+                })
+                .catch((error) => {
+                    window.alert(error.message);
+                });
+        });
 
         search.addEventListener("click", searchOrder);
         next_button.addEventListener("click", moveToNextStep);
