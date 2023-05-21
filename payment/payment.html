@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="payment.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="all.min.css">
-
-
 </head>
 <body>
     <div class="container p-0">
@@ -19,35 +17,35 @@
                 <div class="col-12">
                     <div class="d-flex flex-column">
                         <p class="text mb-1">Person Name</p>
-                        <input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
+                        <input id="__NAME" class="form-control mb-3" type="text" placeholder="Name" value="">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="d-flex flex-column">
                         <p class="text mb-1">Card Number</p>
-                        <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                        <input id="__CARD_NUMBER" class="form-control mb-3" type="text" placeholder="1234 5678 435678">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="d-flex flex-column">
                         <p class="text mb-1">Expiry</p>
-                        <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                        <input id="__EXPIRY" class="form-control mb-3" type="text" placeholder="MM/YYYY">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="d-flex flex-column">
                         <p class="text mb-1">CVV/CVC</p>
-                        <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                        <input id="__CVV" class="form-control mb-3 pt-2 " type="password" placeholder="***">
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="btn btn-primary mb-3">
-                        <span class="ps-3">Pay $243</span>
-                        <span class="fas fa-arrow-right"></span>
+                    <div class="btn btn-primary mb-3" id="__BUTTON">
+                        <span class="ps-3">Pay</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="module" src="payment.js"></script>
 </body>
 </html>

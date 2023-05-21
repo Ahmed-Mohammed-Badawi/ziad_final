@@ -22,27 +22,14 @@
                         <label for="car_type">Car Type:</label>
                         <select name="car_type" id="car_type" class="desgin" required>
                             <option value="">Select an Option</option>
-                            <option value="cat">BMW</option>
-                            <option value="hamster">Mercedes</option>
-                            <option value="cat">Audi</option>
-                            <option value="hamster">Toyota</option>
-                            <option value="cat">Honda</option>
-
+                            <option value="BMW">BMW</option>
+                            <option value="MERCEDES">Mercedes</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="car_model">Car Model:</label>
                         <select name="car_model" id="car_model" required>
                             <option value="">Select an Option</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -88,10 +75,8 @@
                         <label for="car_engine">Engine capcity:</label>
                         <select name="car_engine" id="car_engine" required>
                             <option value="">Select an Option</option>
-                            <option value="1000-1600">1000-1600cc</option>
+                            <option value="1600-1800cc">1600-1800cc</option>
                             <option value="1800-2000">1800-2000cc</option>
-                            <option value="2200-2500">2200-2500cc</option>
-                            <option value="3000-3500">3000-3500cc</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -101,12 +86,6 @@
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -123,6 +102,22 @@
             </div>
             <div id="__LOGOUT">
                 <img src="./logout.png" alt="Home Image">
+            </div>
+        </div>
+
+        <!-- OVERLAY TO PREVIEW CAR DETAILS -->
+        <div id="__OVERLAY" class="HIDDEN">
+            <div id="__CAR_DETAILS" class="HIDDEN">
+                <h1>Car Details</h1>
+                <p>Custom Tax: <span id="__CUSTOM_TAX">111111111</span></p>
+                <p>development fees: <span id="__DEVELOPMENT_FEES">111111111</span></p>
+                <p>price: <span id="__PRICE">111111111</span></p>
+                <p>schedule_tax: <span id="__SCHEDULE_TAX">111111111</span></p>
+                <p>total_value: <span id="__TOTAL_VALUE">111111111</span></p>
+                <p>value_added_tax: <span id="__VALUE_ADDED_TAX">111111111</span></p>
+
+                <button id="__CLOSE">&#x2715;</button>
+                <button id="__PAY">Pay</button>
             </div>
         </div>
     </div>

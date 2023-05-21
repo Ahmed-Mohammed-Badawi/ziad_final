@@ -5,6 +5,11 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {
+    getFirestore,
+    setDoc,
+    doc,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAjFD4P-32-B3AUsVTaKYI-immMc3EUcMs",
@@ -19,6 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const submitButton = document.getElementById("submit");
 const signupButton = document.getElementById("sign-up");
@@ -27,7 +33,7 @@ const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");
 const createacct = document.getElementById("create-acct");
 
-const signupEmailIn = document.getElementById("email-signup");
+const fullName = document.getElementById("fullName");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
 const signupPasswordIn = document.getElementById("password-signup");
 const confirmSignUpPasswordIn = document.getElementById(
@@ -40,7 +46,7 @@ const deletebtn = document.getElementById("Delete-user");
 
 var email,
     password,
-    signupEmail,
+    fullNameValue,
     signupPassword,
     confirmSignupEmail,
     confirmSignUpPassword;
@@ -48,10 +54,11 @@ var email,
 createacctbtn.addEventListener("click", function () {
     var isVerified = true;
 
-    signupEmail = signupEmailIn.value;
     confirmSignupEmail = confirmSignupEmailIn.value;
-    if (signupEmail != confirmSignupEmail) {
-        window.alert("Email fields do not match. Try again.");
+    fullNameValue = fullName.value;
+
+    if (!confirmSignupEmail) {
+        window.alert("Please Enter a valid email address.");
         isVerified = false;
     }
 
@@ -63,7 +70,7 @@ createacctbtn.addEventListener("click", function () {
     }
 
     if (
-        signupEmail == null ||
+        fullNameValue == null ||
         confirmSignupEmail == null ||
         signupPassword == null ||
         confirmSignUpPassword == null
@@ -73,19 +80,26 @@ createacctbtn.addEventListener("click", function () {
     }
 
     if (isVerified) {
-        createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
-            .then((userCredential) => {
+        createUserWithEmailAndPassword(auth, confirmSignupEmail, signupPassword)
+            .then(async (userCredential) => {
                 // Signed in
                 const user = userCredential.user;
 
-                // save user data to database
+                // Save user data to database firestore collection user with user id as document id
+                const docRef = await setDoc(doc(db, "users", user.uid), {
+                    name: fullNameValue,
+                    email: confirmSignupEmail,
+                    uid: user.uid,
+                });
 
+                console.log("Document written with ID: ", docRef);
+
+                // save user data to database
                 window.alert("Success! Account created.");
                 window.location.href = "solid/index.html";
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                console.log(error);
                 // ..
                 window.alert("Error occurred. Try again.");
             });

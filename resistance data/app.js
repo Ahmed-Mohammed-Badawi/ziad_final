@@ -6,7 +6,8 @@ import {
 import {
     getFirestore,
     collection,
-    addDoc,
+    doc,
+    setDoc
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -100,20 +101,30 @@ auth.onAuthStateChanged((user) => {
             }
 
             try {
-                const docRef = await addDoc(
-                    collection(db, "TestDataForResidence"),
-                    {
-                        name: name.value,
-                        email: email.value,
-                        phone: phone.value,
-                        national_id: national_id.value,
-                        nationality: nationality.value,
-                        country: country.value,
-                        gender: gender.value,
-                        user_id: user.uid,
-                    }
-                );
-                console.log("Document written with ID: ", docRef.id);
+                /*
+                    1. get the users collection/user.uid document
+                    2. create a subcollection called form
+                    3. add the data to the subcollection
+                */
+
+                const userDocRef = doc(db, "users", user.uid);
+                const formCollectionRef = collection(userDocRef, "form");
+
+                const formData = {
+                    name: name.value,
+                    email: email.value,
+                    "phone number": phone.value,
+                    "national id": national_id.value,
+                    nationality: nationality.value,
+                    country_of_residence: country.value,
+                    gender: gender.value,
+                    user_id: user.uid,
+                };
+
+                const addedDocRef = await setDoc(doc(formCollectionRef, user.uid), formData);
+
+
+                console.log("Document written with ID: ", auth.currentUser.uid);
                 window.location.href = "/index.html";
             } catch (e) {
                 console.error("Error adding document: ", e);

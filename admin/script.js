@@ -62,7 +62,7 @@ auth.onAuthStateChanged((user) => {
             // Check if the VIN number is exists in the database
             // If exists, get the details and show them in the form
             // If not, show an error message
-            const carsRef = collection(db, "TestAddCar");
+            const carsRef = collection(db, "car_details");
             const q = query(carsRef, where("vin", "==", order.value));
             const querySnapshot = await getDocs(q);
 
@@ -73,7 +73,7 @@ auth.onAuthStateChanged((user) => {
                 if (querySnapshot.docs[0].data().car_status == undefined) {
                     const docRef = doc(
                         db,
-                        "TestAddCar",
+                        "car_details",
                         querySnapshot.docs[0].id
                     );
                     await updateDoc(docRef, {
@@ -135,7 +135,7 @@ auth.onAuthStateChanged((user) => {
             // Check if the VIN number is exists in the database
             // If exists, get the details and show them in the form
             // If not, show an error message
-            const carsRef = collection(db, "TestAddCar");
+            const carsRef = collection(db, "car_details");
             const q = query(carsRef, where("vin", "==", order.value));
             const querySnapshot = await getDocs(q);
 
@@ -144,7 +144,7 @@ auth.onAuthStateChanged((user) => {
                 if (querySnapshot.docs[0].data().car_status < 4) {
                     const docRef = doc(
                         db,
-                        "TestAddCar",
+                        "car_details",
                         querySnapshot.docs[0].id
                     );
                     await updateDoc(docRef, {
